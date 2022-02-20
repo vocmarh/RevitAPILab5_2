@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WallUtils = RevitAPILibrary.WallUtils;
 
 
 
@@ -27,8 +28,8 @@ namespace RevitAPILab5_2
         {
             _commandData = commandData;
             SaveCommand = new DelegateCommand(OnSaveCommand);
-            PickedObjects = SelectionUtils.PickObjects(commandData);
-            WallTypes = Autodesk.Revit.DB.WallUtils.GetWallTypes(commandData);
+            PickedObjects = SelectionUtils.Pickobjects(commandData);
+            WallTypes = WallUtils.GetWallTypes(commandData);
         }
 
         private void OnSaveCommand()
